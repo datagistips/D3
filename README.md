@@ -42,4 +42,105 @@ let myTag = (str, name, age) => `${str[0]}${name}${str[1]}${age}${str[2]}`;
 let [name, age] = ['Mika', 28];
 myTag`Participant "${ name }" is ${ age } years old.`;
 
-- 
+var str = 'this string \
+is broken \
+across multiple \
+lines.'
+
+- block statements
+
+var x = 1;
+{
+  var x = 2;
+}
+console.log(x); // outputs 2
+
+if ((x = y)) {
+  /* statements here */
+}
+
+- falsy : false, undefined, null, O, NaN, ""
+- var b = new Boolean(false);
+
+### DOM
+${document.form1.threeChar.value}
+
+- switch () { case xxx: statement; break
+- use break to stop
+- try..catch
+- throw
+
+### Objects
+function UserException(message) {
+  this.message = message;
+  this.name = 'UserException';
+}
+
+Ne fonctionne pas
+
+- try, catch, finally
+
+function f() {
+  try {
+    console.log(0);
+    throw 'bogus';
+  } catch(e) {
+    console.log(1);
+    return true;    // this return statement is suspended
+                    // until finally block has completed
+    console.log(2); // not reachable
+  } finally {
+    console.log(3);
+    return false;   // overwrites the previous "return"
+    console.log(4); // not reachable
+  }
+  // "return false" is executed now
+  console.log(5);   // not reachable
+}
+
+- Error object
+
+### Loops
+- for(let x = 0; x<5;x++)
+- for ([initialExpression]; [conditionExpression]; [incrementExpression])
+
+let btn = document.getElementById('btn');
+btn.addEventListener('click', function() {
+  alert('Number of options selected: ' + howMany(document.selectForm.musicTypes));
+});
+
+document.selectForm.musicTypes
+
+- do..while
+- x += n
+
+### Labeled statement
+markLoop:
+while (theMark === true) {
+   doSomething();
+}
+
+break;
+break [label];
+- à voir : break labelCancelLoops;
+- continue : un peu comme pass
+- à voir : continue [label]
+-   for (let i in obj) {
+-   for..of
+
+const arr = [3, 5, 7];
+arr.foo = 'hello';
+
+for (let i in arr) {
+   console.log(i); // logs "0", "1", "2", "foo"
+}
+
+for (let i of arr) {
+   console.log(i); // logs 3, 5, 7
+}
+
+
+
+
+
+
