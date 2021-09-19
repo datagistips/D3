@@ -391,7 +391,7 @@ var out = document.querySelector('#out');
 out.textContent
 ```
 
-## 18 Septembre 2021
+## 18 Septembre
 - alert, console.log
 - semicolon
 - var : local and global, let : in block, const global : in block, read only
@@ -420,17 +420,22 @@ out.textContent
  - `Hello ${name}`
 
 ### Tagged templates
+```
 let myTag = (str, name, age) => `${str[0]}${name}${str[1]}${age}${str[2]}`;
 let [name, age] = ['Mika', 28];
 myTag`Participant "${ name }" is ${ age } years old.`;
+```
 
+```
 var str = 'this string \
 is broken \
 across multiple \
 lines.'
+```
 
 - block statements
 
+```
 var x = 1;
 {
   var x = 2;
@@ -440,28 +445,39 @@ console.log(x); // outputs 2
 if ((x = y)) {
   /* statements here */
 }
+```
 
 - falsy : false, undefined, null, O, NaN, ""
 - var b = new Boolean(false);
 
 ### DOM
+```
 ${document.form1.threeChar.value}
+```
 
-- switch () { case xxx: statement; break
-- use break to stop
-- try..catch
-- throw
+switch
+```
+switch () { case xxx: statement; break
+```
+
+use break to stop
+
+try..catch
+
+throw
 
 ### Objects
+```
 function UserException(message) {
   this.message = message;
   this.name = 'UserException';
 }
-
+```
 Ne fonctionne pas
 
-- try, catch, finally
+try, catch, finally
 
+```
 function f() {
   try {
     console.log(0);
@@ -479,24 +495,31 @@ function f() {
   // "return false" is executed now
   console.log(5);   // not reachable
 }
+```
 
-- Error object
+Error object
 
 ### Loops
-- for(let x = 0; x<5;x++)
-- for ([initialExpression]; [conditionExpression]; [incrementExpression])
+```
+for(let x = 0; x<5;x++)
+for ([initialExpression]; [conditionExpression]; [incrementExpression])
+```
 
+```
 let btn = document.getElementById('btn');
 btn.addEventListener('click', function() {
   alert('Number of options selected: ' + howMany(document.selectForm.musicTypes));
 });
 
 document.selectForm.musicTypes
+```
 
-- do..while
-- x += n
+do..while
+
+x += n
 
 ### Labeled statement
+```
 markLoop:
 while (theMark === true) {
    doSomething();
@@ -504,12 +527,21 @@ while (theMark === true) {
 
 break;
 break [label];
-- à voir : break labelCancelLoops;
-- continue : un peu comme pass
-- à voir : continue [label]
--   for (let i in obj) {
--   for..of
+```
 
+à voir : break labelCancelLoops;
+continue : un peu comme pass
+
+à voir : continue [label]
+
+for..in
+```
+for (let i in obj) {
+```
+
+for..of
+
+```
 const arr = [3, 5, 7];
 arr.foo = 'hello';
 
@@ -520,9 +552,4 @@ for (let i in arr) {
 for (let i of arr) {
    console.log(i); // logs 3, 5, 7
 }
-
-
-
-
-
-
+```
