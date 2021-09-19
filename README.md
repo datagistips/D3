@@ -11,6 +11,7 @@
 - bind function
 
 ## 19 Septembre
+### Functions
 - Objects
 
 function myFunc(theObject) {
@@ -162,7 +163,233 @@ eval, uneval, isNan, isFinite, decodeURI
 ```
 test
 ```
+### Assignement and operators
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators
 
+```
+x += y, x *= y, x /= y, 	x **= y, x &= y	
+```
+
+right to left
+```
+const z = (x = y); // Or equivalently: const z = x = y;
+```
+
+Destructuring
+
+```
+var foo = ['one', 'two', 'three'];
+
+// without destructuring
+var one   = foo[0];
+var two   = foo[1];
+var three = foo[2];
+
+// with destructuring
+var [one, two, three] = foo;
+```
+
+Strict equal (===)	: Returns true if the operands are equal and of the same type. See also Object.is and sameness in JS.	
+
+bitwise perators : bitwise XOR : ^, NOT : ~, ? >>, ? >>>
+
+binary representation : pas vu
+
+bitwise logical operators : &&, ||, NOT : !
+
+?? nullish coalescing operator. Only returns the second expression, when the first one is "nullish", i.e. null or undefined. 
+
+conditional ternary op. : condition ? val1 : val2
+
+```
+var status = (age >= 18) ? 'adult' : 'minor';
+```
+
+comma operator : allow multiple variables to be updated each time through the loop.
+```
+var x = [0,1,2,3,4,5,6,7,8,9]
+var a = [x, x, x, x, x];
+
+for (var i = 0, j = 9; i <= j; i++, j--)
+//                                ^
+  console.log('a[' + i + '][' + j + ']= ' + a[i][j]);
+```
+
+```
+delete object.property;
+delete object[propertyKey];
+delete objectName[index];
+```
+
+typeof
+
+void and undefined
+
+```
+void function test() {
+  console.log('boo!');
+  // expected output: "boo!"
+}();
+```
+
+in
+```
+// built-in objects
+'PI' in Math;          // returns true
+var myString = new String('coral');
+'length' in myString;  // returns true
+```
+
+objectName instanceof objectType : Date Array
+
+precedence : pas vu
+
+Functions that assign a value, functions that resolve ta a value
+
+```
+this['propertyName']
+this.propertyName
+```
+
+```
+function validate(obj, lowval, hival) {
+  if ((obj.value < lowval) || (obj.value > hival))
+    console.log('Invalid Value!');
+}
+```
+
+```
+<p>Enter a number between 18 and 99:</p>
+<input type="text" name="age" size=3 onChange="validate(this, 18, 99);">
+```
+
+new, super
+? super : quand l'utiliser
+
+### Numbers and dates
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Numbers_and_dates
+
+0888 // 888 parsed as decimal
+Pas vus
+
+Number : à voir
+
+Math, Math.sin
+
+var dateObjectName = new Date([parameters]);
+
+today = new Date();.
+
+A set of integer values for year, month, and day. For example, var Xmas95 = new Date(1995, 11, 25).
+
+set, get, to
+
+getMonth(), getTime(), setTime(), getFullYear(), setFullYEar()
+
+var IPOdate = new Date();
+IPOdate.setTime(Date.parse('Aug 9, 1995'));
+
+```
+function JSClock() {
+  var time = new Date();
+  var hour = time.getHours();
+  var minute = time.getMinutes();
+  var second = time.getSeconds();
+  var temp = '' + ((hour > 12) ? hour - 12 : hour);
+  if (hour == 0)
+    temp = '12';
+  temp += ((minute < 10) ? ':0' : ':') + minute;
+  temp += ((second < 10) ? ':0' : ':') + second;
+  temp += (hour >= 12) ? ' P.M.' : ' A.M.';
+  return temp;
+}
+```
+
+### Text formating
+```
+const firstString = '2 + 2'; // Creates a string literal value
+const secondString = new String('2 + 2'); // Creates a String object
+eval(firstString); // Returns the number 4
+eval(secondString); // Returns a String object containing "2 + 2"
+```
+charAt, idexOf, startsWith, split, slice, substr, match, toLowerCase, 
+
+Multi line
+```
+console.log('string text line 1\n\
+string text line 2');
+// "string text line 1
+// string text line 2"
+
+console.log(`string text line 1
+string text line 2`);
+// "string text line 1
+// string text line 2"
+```
+
+Template literals
+```
+const five = 5;
+const ten = 10;
+console.log(`Fifteen is ${five + ten} and not ${2 * five + ten}.`);
+// "Fifteen is 15 and not 20."
+```
+
+internationalization : pas vu
+
+Intl.NumberFormat, Intl.DateTimeFormat, Intl.Collator
+
+### Regular expressions
+```
+let re = /ab+c/;
+let re = new RegExp('ab+c');
+```
+
+Assertions
+```
+const text = 'A quick fox';
+
+const regexpLastWord = /\w+$/;
+console.log(text.match(regexpLastWord));
+// expected output: Array ["fox"]
+
+const regexpWords = /\b\w+\b/g;
+console.log(text.match(regexpWords));
+// expected output: Array ["A", "quick", "fox"]
+
+const regexpFoxQuality = /\w+(?= fox)/;
+console.log(text.match(regexpFoxQuality));
+// expected output: Array ["quick"]
+```
+
+\w : word character
+
+A voir : assertions
+
+Escaping : /a\*b/ 
+
+exec, test, match, matchAll, search, replace, replaceAll, split
+
+test or search
+
+exec or match
+
+```
+var myRe = new RegExp('d(b+)d', 'g');
+var myArray = myRe.exec('cdbbdbsbz');
+```
+
+pas vu : flags. m flag : multi line
+
+phone number : voir page4.html
+
+```
+var re = /(?:\d{3}|\(\d{3}\))([-\/\.])\d{3}\1\d{4}/;
+document.querySelector('#phone')
+`${phoneInput.value}
+var out = document.querySelector('#out');
+out.textContent
+```
 
 ## 18 Septembre 2021
 - alert, console.log
