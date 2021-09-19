@@ -26,8 +26,8 @@ var mycar = {make: 'Honda', model: 'Accord', year: 1998};
 const square = function(number) { return number * number }
 ```
 
-```
 Function expressions
+```
 function map(f, a) {
   let result = []; // Create a new Array
   let i; // Declare variable
