@@ -8,6 +8,161 @@
 - Iterators
 - forEach
 - =>
+- bind function
+
+## 19 Septembre
+- Objects
+
+function myFunc(theObject) {
+  theObject.make = 'Toyota';
+}
+
+var mycar = {make: 'Honda', model: 'Accord', year: 1998};
+
+const square = function(number) { return number * number }
+
+```
+Function expressions
+function map(f, a) {
+  let result = []; // Create a new Array
+  let i; // Declare variable
+  for (i = 0; i != a.length; i++)
+    result[i] = f(a[i]);
+  return result;
+}
+const f = function(x) {
+   return x * x * x;
+}
+let numbers = [0, 1, 2, 5, 10];
+let cube = map(f,numbers);
+```
+
+```
+ < 2 ? 1 : n * fac(n - 1)
+ ```
+Function constructor & eval
+
+hoisted
+```
+console.log(square(5));
+/* ... */
+function square(n) { return n * n }
+```
+works only with function declaration, not function expressions (const...)
+
+```
+var num1 = 20,
+    num2 = 3,
+    name = 'Chamakh';
+
+// This function is defined in the global scope
+function multiply() {
+  return num1 * num2;
+}
+```
+
+recursive function
+
+```
+function foo(i) {
+  if (i < 0)
+    return;
+  console.log('begin: ' + i);
+  foo(i - 1);
+  console.log('end: ' + i);
+}
+foo(3);
+
+// Output:
+
+// begin: 3
+// begin: 2
+// begin: 1
+// begin: 0
+// end: 0
+// end: 1
+// end: 2
+// end: 3
+```
+
+```
+function outside(x) {
+  function inside(y) {
+    return x + y;
+  }
+  return inside;
+}
+fn_inside = outside(3); // Think of it like: give me a function that adds 3 to whatever you give
+                        // it
+result = fn_inside(5); // returns 8
+
+result1 = outside(3)(5); // returns 8
+```
+Name conflicts : pas vu
+
+Closures : pas vu
+
+typeof, toLowerCase
+
+arguments.length
+
+Rest parameters
+
+```
+function multiply(multiplier, ...theArgs) {
+  return theArgs.map(x => multiplier * x);
+}
+
+var arr = multiply(2, 1, 2, 3);
+console.log(arr); // [2, 4, 6]
+```
+
+map, =>
+
+
+```
+var a = [
+  'Hydrogen',
+  'Helium',
+  'Lithium',
+  'Beryllium'
+];
+
+var a2 = a.map(function(s) { return s.length; });
+
+console.log(a2); // logs [8, 6, 7, 9]
+
+var a3 = a.map(s => s.length);
+
+console.log(a3); // logs [8, 6, 7, 9]
+
+```
+
+**Arrow function**
+=>
+```
+var a3 = a.map(s => s.length);
+```
+
+arrow and this
+```
+function Person() {
+  this.age = 0;
+
+  setInterval(() => {
+    this.age++; // |this| properly refers to the person object
+  }, 1000);
+}
+
+var p = new Person();
+```
+
+eval, uneval, isNan, isFinite, decodeURI
+
+```
+test
+```
+
 
 ## 18 Septembre 2021
 - alert, console.log
