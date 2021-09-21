@@ -1,4 +1,556 @@
 # javascript
+## 21 Septembre
+### Indexed Collections
+```
+let arr = new Array(element0, element1, ..., elementN)
+let arr = Array(element0, element1, ..., elementN)
+let arr = new Array(arrayLength)
+```
+
+Object property
+```
+let obj = {}
+// ...
+obj.prop = [element0, element1, ..., elementN]
+
+// OR
+let obj = {prop: [element0, element1, ...., elementN]}
+```
+
+```
+let arr = []
+arr.length = 42
+```
+
+If array with only one element, safer to user
+
+```
+let wisenArray = Array.of(9.3)   // wisenArray contains only one element 9.3
+```
+
+Length, property accessors
+```
+arr['length']   // 3
+```
+
+Populating, hasOwnProperty
+```
+let arr = []
+arr[3.4] = 'Oranges'
+console.log(arr.length)                 // 0
+console.log(arr.hasOwnProperty(3.4))    // true
+```
+
+0-based
+```
+let cats = []
+cats[30] = ['Dusty']
+console.log(cats.length) // 31
+```
+
+emptying
+```
+let cats = ['Dusty', 'Misty', 'Twiggy']
+console.log(cats.length)  // 3
+
+cats.length = 2
+console.log(cats)  // logs "Dusty, Misty" - Twiggy has been removed
+
+cats.length = 0
+console.log(cats)  // logs []; the cats array is empty
+```
+
+Iterating
+```
+let divs = document.getElementsByTagName('div')
+for (let i = 0, div; div = divs[i]; i++) {
+  /* Process div in some way */
+}
+```
+
+forEach
+```
+let colors = ['red', 'green', 'blue']
+colors.forEach(function(color) {
+  console.log(color)
+})
+```
+
+=>
+```
+test.forEach(v => console.log(v))
+```
+
+undefined
+```
+let array = ['first', 'second', , 'fourth']
+
+array.forEach(function(element) {
+  console.log(element)
+})
+// first
+// second
+// fourth
+
+if (array[2] === undefined) {
+  console.log('array[2] is undefined')  // true
+}
+
+array = ['first', 'second', undefined, 'fourth']
+
+array.forEach(function(element) {
+  console.log(element)
+})
+// first
+// second
+// undefined
+// fourth
+```
+
+concat, join, push, pop, shoft, unshift, slice, splice, reverse, sort, indexOf, lastIndexOf, forEach, map, 
+
+Pas trop vu : Sort by last letter
+```
+let sortFn = function(a, b) {
+  if (a[a.length - 1] < b[b.length - 1]) return -1;
+  if (a[a.length - 1] > b[b.length - 1]) return 1;
+  if (a[a.length - 1] == b[b.length - 1]) return 0;
+}
+myArray.sort(sortFn)
+// sorts the array so that myArray = ["Wind","Fire","Rain"]
+```
+
+filter
+```
+let a1 = ['a', 10, 'b', 20, 'c', 30]
+let a2 = a1.filter(function(item) { return typeof item === 'number'; })
+console.log(a2)  // logs [10, 20, 30]
+```
+
+every, some
+```
+function isNumber(value) {
+  return typeof value === 'number'
+}
+let a1 = [1, 2, 3]
+console.log(a1.every(isNumber))  // logs true
+let a2 = [1, '2', 3]
+console.log(a2.every(isNumber))  // logs false
+```
+
+reduce, pas vu : reduceright
+```
+let a = [10, 20, 30]
+let total = a.reduce(function(accumulator, currentValue) { return accumulator + currentValue }, 0)
+console.log(total) // Prints 60
+```
+
+multi-dim
+```
+let a = new Array(4)
+for (let i = 0; i < 4; i++) {
+  a[i] = new Array(4)
+  for (let j = 0; j < 4; j++) {
+    a[i][j] = '[' + i + ', ' + j + ']'
+  }
+}
+```
+
+store property
+```
+const arr = [1, 2, 3];
+arr.property = "value";
+console.log(arr.property);  // Logs "value"
+```
+
+pas vu : arrays and regular expressions
+
+[array like objects and prototypes : à voir](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections#working_with_array-like_objects)
+```
+Array.prototype.forEach.call('a string', function(chr) {
+  console.log(chr)
+})
+```
+
+[pas vu : typed arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections#typed_arrays)
+
+### Keyed Collections
+map strings to values
+
+new Map, set, get, size, clear
+```
+let sayings = new Map();
+sayings.set('dog', 'woof');
+sayings.set('cat', 'meow');
+sayings.set('elephant', 'toot');
+sayings.size; // 3
+sayings.get('dog'); // woof
+sayings.get('fox'); // undefined
+sayings.has('bird'); // false
+sayings.delete('dog');
+sayings.has('dog'); // false
+
+for (let [key, value] of sayings) {
+  console.log(key + ' goes ' + value);
+}
+// "cat goes meow"
+// "elephant goes toot"
+
+sayings.clear();
+sayings.size; // 0
+```
+
+Pas vu : weakmap and privated data
+
+Sets
+```
+let mySet = new Set();
+mySet.add(1);
+mySet.add('some text');
+mySet.add('foo');
+
+mySet.has(1); // true
+mySet.delete('foo');
+mySet.size; // 2
+
+for (let item of mySet) console.log(item);
+```
+
+Convert : Array.from
+```
+Array.from(mySet);
+[...mySet2];
+
+mySet2 = new Set([1, 2, 3, 4]);
+```
+
+Advantages :
+
+- Deleting Array elements **by value** (arr.splice(arr.indexOf(val), 1)) is very **slow**.
+- Set objects let you delete elements by their value. With an array, you would have to splice based on an element's index.
+- The value **NaN** cannot be found with indexOf in an array.
+
+pas vu : WeakSet
+
+### Pas vu : working with objects
+### Pas vu : Details of the object model
+
+### Promises
+
+
+```
+function successCallback(result) {
+  console.log("Audio file ready at URL: " + result);
+}
+
+function failureCallback(error) {
+  console.error("Error generating audio file: " + error);
+}
+
+createAudioFileAsync(audioSettings, successCallback, failureCallback);
+```
+
+then
+```
+createAudioFileAsync(audioSettings).then(successCallback, failureCallback);
+```
+
+chaining
+```
+const promise = doSomething();
+const promise2 = promise.then(successCallback, failureCallback);
+```
+
+```
+const promise2 = doSomething().then(successCallback, failureCallback);
+```
+
+chaining
+```
+doSomething()
+.then(function(result) {
+  return doSomethingElse(result);
+})
+.then(function(newResult) {
+  return doThirdThing(newResult);
+})
+.then(function(finalResult) {
+  console.log('Got the final result: ' + finalResult);
+})
+.catch(failureCallback);
+```
+
+=>
+```
+doSomething()
+.then(result => doSomethingElse(result))
+.then(newResult => doThirdThing(newResult))
+.then(finalResult => {
+  console.log(`Got the final result: ${finalResult}`);
+})
+.catch(failureCallback);
+```
+
+chain after failure
+```
+new Promise((resolve, reject) => {
+    console.log('Initial');
+
+    resolve();
+})
+.then(() => {
+    throw new Error('Something failed');
+
+    console.log('Do this');
+})
+.catch(() => {
+    console.error('Do that');
+})
+.then(() => {
+    console.log('Do this, no matter what happened before');
+});
+```
+
+[Pas vu : error propagation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises#error_propagation)
+
+Promise rejection events : rejectionhandled, unhandledrejection, promise, reason
+
+help debug on Node.js
+```
+process.on("unhandledRejection", (reason, promise) => {
+  /* You might start here by adding code to examine the
+   * "promise" and "reason" values. */
+});
+```
+
+old school
+```
+setTimeout(() => saySomething("10 seconds passed"), 10*1000);
+```
+
+new school
+```
+const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+wait(10*1000).then(() => saySomething("10 seconds")).catch(failureCallback);
+```
+
+Promise.resolve, Promise.reject, Promise.all
+```
+Promise.all([func1(), func2(), func3()])
+.then(([result1, result2, result3]) => { /* use result1, result2 and result3 */ });
+```
+
+? sequential composition
+```
+[func1, func2, func3].reduce((p, f) => p.then(f), Promise.resolve())
+.then(result3 => { /* use result3 */ });
+```
+
+```
+Promise.resolve().then(func1).then(func2).then(func3);
+```
+
+Timing
+```
+Promise.resolve().then(() => console.log(2));
+console.log(1); // 1, 2
+```
+
+?
+```
+const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+wait(0).then(() => console.log(4));
+Promise.resolve().then(() => console.log(2)).then(() => console.log(3));
+console.log(1); // 1, 2, 3, 4
+```
+
+Pas vu : Task queues vs microtasks
+
+Pas vu : [nesting](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises#nesting)
+
+good rule of thumb
+```
+doSomething()
+.then(function(result) {
+  return doSomethingElse(result);
+})
+.then(newResult => doThirdThing(newResult))
+.then(() => doFourthThing())
+.catch(error => console.error(error));
+```
+
+Note that () => x is short for () => { return x; }.
+
+
+### Iterators and Generators
+customizing for..of
+
+next(), value, done, {done: true}
+
+Array iterator
+
+function*
+
+A voir
+
+#### Iterables
+Array, Map
+
+@@iterator
+
+A voir
+
+Pas vu : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Meta_programming
+
+### Javascript modules
+import, export
+
+example modules : https://github.com/mdn/js-examples/tree/master/modules
+
+```
+index.html
+main.js
+modules/
+    canvas.js
+    square.js
+```
+
+.mjs : for modules
+
+export
+```
+export const name = 'square';
+
+export function draw(ctx, length, x, y, color) {
+  ctx.fillStyle = color;
+  ctx.fillRect(x, y, length, length);
+
+  return {
+    length: length,
+    x: x,
+    y: y,
+    color: color
+  };
+}
+```
+
+at the end
+```
+export { name, draw, reportArea, reportPerimeter };
+```
+
+import
+```
+import { name, draw, reportArea, reportPerimeter } from './modules/square.js';
+```
+
+HTML page
+```
+<script type="module" src="main.js"></script>
+```
+
+```
+<script type="module">
+  /* JavaScript module code here */
+</script>
+```
+
+? : default
+```
+export default randomSquare;
+```
+
+```
+export default function(ctx) {
+  ...
+}
+```
+
+```
+import randomSquare from './modules/square.js';
+```
+
+```
+import {default as randomSquare} from './modules/square.js';
+```
+
+item
+```
+// inside module.js
+export {
+  function1 as newFunctionName,
+  function2 as anotherNewFunctionName
+};
+
+// inside main.js
+import { newFunctionName, anotherNewFunctionName } from './modules/module.js';
+```
+
+```
+// inside module.js
+export { function1, function2 };
+
+// inside main.js
+import { function1 as newFunctionName,
+         function2 as anotherNewFunctionName } from './modules/module.js';
+```
+
+however it arguably makes more sense to leave your module code alone, and make the changes in the imports. 
+
+*
+```
+import * as Module from './modules/module.js';
+```
+
+```
+Module.function1()
+Module.function2()
+etc.
+```
+
+[Pas vu : classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#modules_and_classes)
+
+Aggregating
+```
+export * from 'x.js'
+export { name } from 'x.js'
+```
+
+```
+modules/
+  canvas.js
+  shapes.js
+  shapes/
+    circle.js
+    square.js
+    triangle.js
+```
+
+submodule
+```
+export { Square };
+```
+
+shapes.js
+```
+export { Square } from './shapes/square.js';
+export { Triangle } from './shapes/triangle.js';
+export { Circle } from './shapes/circle.js';
+```
+
+[?: dynamic module loading](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#dynamic_module_loading)
+
+await, then
+```
+// fetch request
+const colors = fetch('../data/colors.json')
+	.then(response => response.json());
+
+export default await colors;
+```
+
 ## 19 Septembre
 ### Functions
 Objects
