@@ -22,8 +22,7 @@ let arr = []
 arr.length = 42
 ```
 
-If array with only one element, safer to user
-
+If array with only one element, safer to use
 ```
 let wisenArray = Array.of(9.3)   // wisenArray contains only one element 9.3
 ```
