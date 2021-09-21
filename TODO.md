@@ -6,3 +6,4 @@
 - [ ] forEach
 - [ ] =>
 - [ ] bind function
+- [ ] protypes (ex. Array.prototypes)
