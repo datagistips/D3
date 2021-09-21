@@ -475,7 +475,6 @@ import randomSquare from './modules/square.js';
 import {default as randomSquare} from './modules/square.js';
 ```
 
-item
 ```
 // inside module.js
 export {
@@ -498,7 +497,7 @@ import { function1 as newFunctionName,
 
 however it arguably makes more sense to leave your module code alone, and make the changes in the imports. 
 
-*
+\*
 ```
 import * as Module from './modules/module.js';
 ```
