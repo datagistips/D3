@@ -1,0 +1,8 @@
+- [ ] Blocks
+- [ ] Promises
+- [ ] DOM elements
+- [ ] Dictionaries
+- [ ] Iterators
+- [ ] forEach
+- [ ] =>
+- [ ] bind function
