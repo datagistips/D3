@@ -1,15 +1,4 @@
 # javascript
-
-## A voir
-- Blocks
-- Promises
-- DOM elements
-- Dictionaries
-- Iterators
-- forEach
-- =>
-- bind function
-
 ## 19 Septembre
 ### Functions
 Objects
