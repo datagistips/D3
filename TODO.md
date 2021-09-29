@@ -12,3 +12,4 @@
 - [ ] Debug
 - [ ] Lodash
 - [ ] Data manipulation
+- [ ] .blob() ex. https://observablehq.com/@mootari/embedding-fonts-into-an-svg
