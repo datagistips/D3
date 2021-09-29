@@ -13,5 +13,6 @@
 - [ ] Lodash
 - [ ] Data manipulation
 - [ ] .blob() ex. https://observablehq.com/@mootari/embedding-fonts-into-an-svg
-- [ ] await
+- [ ] await, reject, resolve
 - [ ] context, DOM2D, imgData RGBA, flat
+- [ ] async
