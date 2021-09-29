@@ -1,9 +1,14 @@
-- [ ] Blocks
+- [x] Blocks
 - [ ] Promises
 - [ ] DOM elements
 - [ ] Dictionaries
 - [ ] Iterators
 - [ ] forEach
-- [ ] =>
+- [x] =>
 - [ ] bind function
 - [ ] protypes (ex. Array.prototypes)
+- [ ] stringify
+- [ ] Arquero
+- [ ] Debug
+- [ ] Lodash
+- [ ] Data manipulation
