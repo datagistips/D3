@@ -16,3 +16,4 @@
 - [ ] await, reject, resolve
 - [ ] context, DOM2D, imgData RGBA, flat
 - [ ] async
+- [ ] Différence Promises.delay et Promises.tick ?
