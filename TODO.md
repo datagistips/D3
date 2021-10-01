@@ -22,3 +22,4 @@
 - [ ] Plot https://mauriciopoppe.github.io/function-plot/
 - [ ] Racing bar https://medium.com/analytics-vidhya/building-racing-bar-chart-in-d3js-d89b71cd3439
 - [ ] scaleBand https://observablehq.com/@d3/d3-scaleband
+- [ ] vega-lite
