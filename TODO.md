@@ -24,3 +24,4 @@
 - [ ] scaleBand https://observablehq.com/@d3/d3-scaleband
 - [ ] vega-lite
 - [ ] d3.array, d3.group, d3.rollup
+- [ ] ended function https://youtu.be/XowhTotAIpA?t=2427
