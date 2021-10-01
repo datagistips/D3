@@ -19,3 +19,4 @@
 - [ ] Différence Promises.delay et Promises.tick ?
 - [ ] Voir les exemples D3
 - [ ] codePen
+- [ ] Plot : https://mauriciopoppe.github.io/function-plot/
