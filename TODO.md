@@ -18,5 +18,7 @@
 - [ ] async
 - [ ] Différence Promises.delay et Promises.tick ?
 - [ ] Voir les exemples D3
-- [ ] codePen
-- [ ] Plot : https://mauriciopoppe.github.io/function-plot/
+- [ ] codePen https://codepen.io/pen/
+- [ ] Plot https://mauriciopoppe.github.io/function-plot/
+- [ ] Racing bar https://medium.com/analytics-vidhya/building-racing-bar-chart-in-d3js-d89b71cd3439
+- [ ] scaleBand https://observablehq.com/@d3/d3-scaleband
