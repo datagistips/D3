@@ -1,3 +1,30 @@
+## 3 Octobre
+https://observablehq.com/@nyuvis/javascript-basics  
+
+
+Arrow  
+```
+farewell = name => `Good bye, ${name}!`
+```
+
+```
+double = num => {
+  const value = num * 2;
+  return `${num} doubled is ${value}`;
+}
+```
+
+Array.from
+```
+Array.from(nameToAge, pair => `${pair[0]} is ${pair[1]} years old.`)
+```
+
+Destructuring
+```
+Array.from(nameToAge, pair => ({ name: pair[0], age: pair[1] }) )
+Array.from(nameToAge, ([name, age]) => ({ name, age })) // équivalent
+```
+
 ## 1er Octobre
 https://d3-wiki.readthedocs.io/zh_CN/master/Time-Formatting/
 
