@@ -30,3 +30,4 @@
 - [ ] transition selectChild
 - [ ] différence d3.select et d3.active ?
 - [ ] areaRadial
+- [ ] small multiples https://observablehq.com/@nyuvis/small-multiples
