@@ -25,3 +25,8 @@
 - [ ] vega-lite
 - [ ] d3.array, d3.group, d3.rollup
 - [ ] ended function https://youtu.be/XowhTotAIpA?t=2427
+- [ ] https://bost.ocks.org/mike/selection/#data
+- [ ] subtransitions ? https://d3-wiki.readthedocs.io/zh_CN/master/Transitions/
+- [ ] transition selectChild
+- [ ] différence d3.select et d3.active ?
+- [ ] areaRadial
