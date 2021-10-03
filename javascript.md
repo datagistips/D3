@@ -1,4 +1,13 @@
 # javascript
+## 3 Octobre
+String.fromCharCode(65 + Math.random() * 26) pour voir une lettre de l'alphabet au hasard  
+interpolateNumber, interpolate, interpolateRound  
+d3.defined  
+line = d3.line()
+    .defined(d => !isNaN(d.value))
+    .x(d => x(d.date))
+    .y(d => y(d.value))
+
 ## 1er Octobre
 https://d3-wiki.readthedocs.io/zh_CN/master/Time-Formatting/
 
