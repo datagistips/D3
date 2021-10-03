@@ -3,10 +3,34 @@
 String.fromCharCode(65 + Math.random() * 26) pour voir une lettre de l'alphabet au hasard  
 interpolateNumber, interpolate, interpolateRound  
 d3.defined  
+```
 line = d3.line()
     .defined(d => !isNaN(d.value))
     .x(d => x(d.date))
     .y(d => y(d.value))
+```
+ getTotalLength  
+ animateMulti et fonction récursive  
+ stroke-dasharray  *
+ Math.min(...array)  
+ y.domain()  
+ datum vs data  
+ .nice()
+ 
+ ```
+ d3.selectAll("circle").transition()
+    .delay(function(d, i) { return i * 50; })
+    .on("start", function repeat() {
+        d3.active(this)
+            .style("fill", "red")
+          .transition()
+            .style("fill", "green")
+          .transition()
+            .style("fill", "blue")
+          .transition()
+            .on("start", repeat);
+      });
+```
 
 ## 1er Octobre
 https://d3-wiki.readthedocs.io/zh_CN/master/Time-Formatting/
