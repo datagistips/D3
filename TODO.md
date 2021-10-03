@@ -23,7 +23,7 @@
 - [ ] Racing bar https://medium.com/analytics-vidhya/building-racing-bar-chart-in-d3js-d89b71cd3439
 - [ ] scaleBand https://observablehq.com/@d3/d3-scaleband
 - [ ] vega-lite
-- [ ] d3.array, d3.group, d3.rollup
+- [ ] d3.array, d3.group, d3.rollup https://observablehq.com/@nyuvis/data-transformation
 - [ ] ended function https://youtu.be/XowhTotAIpA?t=2427
 - [ ] https://bost.ocks.org/mike/selection/#data
 - [ ] subtransitions ? https://d3-wiki.readthedocs.io/zh_CN/master/Transitions/
