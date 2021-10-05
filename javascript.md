@@ -1,4 +1,41 @@
 ## 5 octobre
+text > tspan
+```
+// Create a new <text> element for every data element.
+let text = canvas
+    .selectAll("text")
+    .data(data)
+    .enter()
+    .append("text")
+    .attr("x", 20)
+    .attr("y", 20);
+
+// Add a <tspan class="title"> for every data element.
+text.append("tspan")
+    .text(d => d.title)
+    .attr("class", "title");
+
+// Add a <tspan class="author"> for every data element.
+text.append("tspan")
+    .text(d => `-- ${d.author}`)
+    .attr("class", "author")
+    .attr("x", 20)
+    .attr("dx", 20)
+    .attr("dy", 25);
+
+// Add a <tspan class="text"> for every text line.
+text.selectAll("tspan.text")
+    .data(d => d.text.split("\n"))
+    .enter()
+    .append("tspan")
+    .attr("class", "text")
+    .text(d => d)
+    .attr("x", 20)
+    .attr("dx", 10)
+    .attr("dy", 22);
+```	
+https://jarrettmeyer.com/2018/06/05/svg-multiline-text-with-tspan
+	
 substract date
 ```
   var d = dates[3].date
