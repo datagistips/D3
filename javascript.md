@@ -1,3 +1,32 @@
+## 5 octobre
+sort decimals
+```
+[pos1, pos2].sort(function(a, b){return a-b;}); // !!
+```
+
+join > each > select(this)
+```
+svg.selectAll('line')
+    .data(dates)
+    .join("line")
+    .each(function(d) { // !! each
+      const date = d
+      d3.select(this)
+        .attr('stroke', 'grey')
+        .attr('stroke-width', 1)
+        .attr('x1', d=>x(d.date))
+        .attr('x2', d=>x(d.date))
+        .attr('y1', function(d) {
+          const y1 = getLine(date)[0] - 20
+          return y1
+        })
+        .attr('y2', function(d) {
+          const y2 = getLine(date)[1] + 20
+          return y2
+        })
+        .attr('stroke-dasharray', 2)
+    })
+   ```
 ## 4 Octobre
 Comparer des dates
 ```
