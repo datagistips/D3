@@ -1,4 +1,10 @@
 ## 5 octobre
+substract date
+```
+  var d = dates[3].date
+  d.setDate(d.getDate()-1)
+  ```
+  
 sort decimals
 ```
 [pos1, pos2].sort(function(a, b){return a-b;}); // !!
