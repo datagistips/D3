@@ -32,3 +32,6 @@
 - [ ] areaRadial
 - [ ] small multiples https://observablehq.com/@nyuvis/small-multiples
 - [ ] Comment faire un selectAll sur un g ?
+- [ ] Voir les defs
+- [ ] Gestion des dates
+- [ ] d3.active(this) et disco
