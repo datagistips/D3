@@ -35,3 +35,4 @@
 - [ ] Voir les defs
 - [ ] Gestion des dates
 - [ ] d3.active(this) et disco
+- [ ] stroke dash array interpolation https://bl.ocks.org/mbostock/5649592
